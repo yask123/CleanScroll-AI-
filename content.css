@@ -1,0 +1,80 @@
+@keyframes fadeOutShrink {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    max-height: 500px; /* Start with a reasonable max height */
+    margin-bottom: 1rem; /* Adjust based on Twitter's spacing */
+    overflow: hidden;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-width: 0;
+    overflow: hidden;
+  }
+}
+
+/* Class to apply the animation */
+.clean-twitter-hiding {
+  animation-name: fadeOutShrink;
+  animation-duration: 0.6s; /* Adjust duration as needed */
+  animation-fill-mode: forwards; /* Keep the state of the last keyframe */
+  animation-timing-function: ease-in-out;
+  border: 2px solid red !important; /* Briefly show red border during animation */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Optional red glow */
+}
+
+/* Ensure tweet container can contain the absolute overlay */
+article[data-testid="tweet"][data-clean-twitter-processed] {
+  position: relative; /* Needed for absolute positioning of the overlay */
+}
+
+/* Overlay Styles */
+.clean-twitter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 240, 240, 0.95); /* Light background, mostly opaque */
+  backdrop-filter: blur(4px); /* Nice blur effect for modern browsers */
+  -webkit-backdrop-filter: blur(4px);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width/height */
+  z-index: 10; /* Ensure it's above tweet content */
+  border-radius: 15px; /* Match typical Twitter card radius */
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+}
+
+.clean-twitter-overlay p {
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+/* Reveal Button Styles */
+.clean-twitter-reveal-button {
+  background-color: #1DA1F2; /* Twitter blue */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.clean-twitter-reveal-button:hover {
+  background-color: #0c85d0;
+} 

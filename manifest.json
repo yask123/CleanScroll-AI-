@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "CleanScroll AI",
+  "version": "1.0",
+  "description": "Customize your Twitter/X feed using AI prompts. Hide unwanted content and enjoy a cleaner scrolling experience.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://twitter.com/*", "*://x.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.openai.com/",
+    "*://twitter.com/*",
+    "*://x.com/*"
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html"
+  }
+} 

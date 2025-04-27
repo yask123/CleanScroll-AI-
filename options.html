@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clean Twitter Options</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Clean Twitter Settings</h1>
+
+    <section class="settings-section">
+      <h2><span class="icon">🔑</span> OpenAI API Key</h2>
+      <p class="description">Enter your OpenAI API key. It's stored securely in your browser's sync storage and only used to analyze tweets.</p>
+      <div class="input-group">
+        <input type="password" id="api-key-input" placeholder="Enter your key (sk-...)" autocomplete="off">
+        <button id="save-api-key-button" class="button button-primary">Save Key</button>
+      </div>
+      <p id="api-key-status" class="status-message"></p>
+    </section>
+
+    <hr class="divider">
+
+    <section class="settings-section">
+      <h2><span class="icon">📝</span> Exclusion Prompts</h2>
+      <p class="description">Add or remove prompts used to identify tweets for hiding. The AI will be asked if a tweet matches *any* of these prompts.</p>
+      
+      <div id="prompts-container">
+        <h3>Current Prompts:</h3>
+        <ul id="prompts-list">
+          <!-- Prompts loaded here -->
+          <li class="no-prompts-message" style="display: none;">No prompts added yet.</li>
+        </ul>
+      </div>
+
+      <div id="add-prompt-container">
+        <h3>Add New Prompt:</h3>
+        <div class="input-group">
+          <input type="text" id="new-prompt-input" placeholder="e.g., Is this tweet hate speech?">
+          <button id="add-prompt-button" class="button button-secondary">Add Prompt</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html> 

@@ -1,0 +1,12 @@
+# Node
+node_modules/
+npm-debug.log
+Yarn.lock
+
+# Build artifacts
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db 
