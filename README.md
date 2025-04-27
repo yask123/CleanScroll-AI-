@@ -4,7 +4,9 @@
 
 CleanScroll AI is a Chrome extension that uses the power of Large Language Models (like GPT) to filter your timeline based on *your* rules. Define simple prompts, and the AI will automatically identify and hide tweets matching those criteria, giving you a cleaner, more focused scrolling experience.
 
-![Demo Placeholder](placeholder.gif) <!-- TODO: Replace with an actual demo GIF! -->
+<p align="center">
+  <img src="demo1.png" alt="CleanScroll AI Demo - Hiding a tweet" width="600">
+</p>
 
 ## ✨ Key Features
 
@@ -43,6 +45,11 @@ CleanScroll AI is a Chrome extension that uses the power of Large Language Model
     *   Add/Update your OpenAI API key.
     *   Add new exclusion prompts (questions the AI will answer about each tweet).
     *   Remove existing prompts.
+
+    <p align="center">
+      <img src="demo2.png" alt="CleanScroll AI Demo - Options Page" width="600">
+    </p>
+
 *   **Browse Twitter/X:** The extension will automatically start analyzing tweets and applying overlays as you scroll.
 *   **Reveal Tweets:** Click the "Show Tweet Anyway" button on any overlay to see the original tweet.
 
